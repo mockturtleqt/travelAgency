@@ -1,25 +1,26 @@
 package com.epam.training.second.controller;
 
 import com.epam.training.second.entity.Agency;
-import com.epam.training.second.entity.Goal;
-import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.exception.WrongTourException;
 import com.epam.training.second.factory.TourFactory;
+import com.epam.training.second.reader.ReadToursFromFile;
 import org.apache.log4j.Logger;
 
 public class Main {
     private static Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
-        Agency lavandaLand = new Agency("LavandaLand");
-        TourFactory kommunarka = new TourFactory();
-        Tour tessTour = null;
-        try {
-            tessTour = kommunarka.getGoal(Goal.ADVENTURE, "galia");
-        } catch (WrongTourException e) {
-            logger.error(e, e);
-        }
-        System.out.println(tessTour);
+        TourFactory lavanda = new TourFactory();
+        Agency lavandaLand = new Agency("Lavanda Land");
+
+        ReadToursFromFile.readToursFromFile("./data/tours.txt").forEach(line -> {
+            try {
+                lavandaLand.addTour(lavanda.createTours(line));
+            } catch (WrongTourException e) {
+                logger.error(e, e);
+            }
+        });
+        lavandaLand.getTours().forEach(System.out::println);
 
 
     }

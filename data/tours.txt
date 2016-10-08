@@ -1,0 +1,3 @@
+festival, Coldplay, Poland, 2016-06-18, 2016-06-200, 100
+Adventure, UltraExtreme, Germany, 2016-10-10, 2016-10-20, 300
+else

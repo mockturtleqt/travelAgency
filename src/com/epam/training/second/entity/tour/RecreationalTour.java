@@ -1,9 +1,6 @@
 package com.epam.training.second.entity.tour;
 
-import com.epam.training.second.entity.Destination;
-import com.epam.training.second.entity.Food;
-import com.epam.training.second.entity.RecreationalActivity;
-import com.epam.training.second.entity.Transportation;
+import com.epam.training.second.entity.*;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -23,8 +20,26 @@ public class RecreationalTour extends Tour {
         this.food = food;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.duration = Period.between(endDate, startDate);
+        this.duration = Period.between(startDate, endDate);
         this.price = price;
+        this.goal = Goal.RECREATION;
+    }
+
+    @Override
+    public String toString() {
+        return "Tour {" +
+                "tour name = '" + tourName + '\'' +
+                ", description = '" + description + '\'' +
+                ", destination = " + destination +
+                ", recreational activity = " + recreationalActivity +
+                ", goal = " + goal +
+                ", transportation = " + transportation +
+                ", food = " + food +
+                ", startDate = " + startDate +
+                ", endDate = " + endDate +
+                ", duration = " + duration.getDays() + " days" +
+                ", price = " + price +
+                '}';
     }
 }
 

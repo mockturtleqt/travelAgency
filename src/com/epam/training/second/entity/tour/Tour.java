@@ -22,22 +22,6 @@ public abstract class Tour {
     protected Period duration;
     protected double price;
 
-//    public Tour() {}
-//
-//    public Tour(TourBuilder tourBuilder) {
-//        this.tourId = tourBuilder.getTourId();
-//        this.tourName = tourBuilder.getTourName();
-//        this.description = tourBuilder.getDescription();
-//        this.destination = tourBuilder.getDestination();
-//        this.goal = tourBuilder.getGoal();
-//        this.transportation = tourBuilder.getTransportation();
-//        this.food = tourBuilder.getFood();
-//        this.startDate = tourBuilder.getStartDate();
-//        this.endDate = tourBuilder.getEndDate();
-//        this.price = tourBuilder.getPrice();
-//        this.duration = Period.between(endDate, startDate);
-//    }
-
     public String getTourName() {
         return tourName;
     }
