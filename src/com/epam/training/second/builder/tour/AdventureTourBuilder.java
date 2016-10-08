@@ -35,10 +35,10 @@ public class AdventureTourBuilder extends TourBuilder {
             this.startDate = LocalDate.parse(params[TOUR_START_DATE]);
             this.endDate = LocalDate.parse(params[TOUR_END_DATE]);
             this.price = Float.parseFloat(params[TOUR_PRICE]);
-            this.adventureActivity = AdventureActivity.valueOf(params[ADVENTURE_ACTIVITY]);
+            this.adventureActivity = AdventureActivity.valueOf(params[ADVENTURE_ACTIVITY].toUpperCase());
             this.description = params[TOUR_DESCRIPTION];
-            this.transportation = Transportation.valueOf(params[TOUR_TRANSPORTATION]);
-            this.food = Food.valueOf(params[TOUR_FOOD]);
+            this.transportation = Transportation.valueOf(params[TOUR_TRANSPORTATION].toUpperCase());
+            this.food = Food.valueOf(params[TOUR_FOOD].toUpperCase());
         } catch (ArrayIndexOutOfBoundsException | DateTimeParseException | IllegalArgumentException e) {
             logger.error(e);
         }
@@ -72,7 +72,7 @@ public class AdventureTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
-        return new AdventureTour(this.tourId, this.tourName, this.destination, this.adventureActivity,
+        return new AdventureTour(this.tourId, this.tourName, this.destination, this.adventureActivity, this.description,
                 this.transportation, this.food, this.startDate, this.endDate, this.price);
     }
 }

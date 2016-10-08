@@ -9,13 +9,14 @@ import java.util.UUID;
 public class FestivalTour extends Tour {
     private MusicGenre musicGenre;
 
-    public FestivalTour(UUID tourId, String tourName, Destination destination,
-                        MusicGenre musicGenre, Transportation transportation, Food food,
+    public FestivalTour(UUID tourId, String tourName, Destination destination, MusicGenre musicGenre,
+                        String description, Transportation transportation, Food food,
                         LocalDate startDate, LocalDate endDate, double price) {
         this.tourId = tourId;
         this.tourName = tourName;
         this.destination = destination;
         this.musicGenre = musicGenre;
+        this.description = description;
         this.transportation = transportation;
         this.food = food;
         this.startDate = startDate;
@@ -38,7 +39,7 @@ public class FestivalTour extends Tour {
                 ", startDate = " + startDate +
                 ", endDate = " + endDate +
                 ", duration = " + duration.getDays() + " days" +
-                ", price = " + price +
+                ", price = " + price + " $" +
                 '}';
     }
 }

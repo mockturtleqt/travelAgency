@@ -35,10 +35,10 @@ public class RecreationalTourBuilder extends TourBuilder {
             this.startDate = LocalDate.parse(params[TOUR_START_DATE]);
             this.endDate = LocalDate.parse(params[TOUR_END_DATE]);
             this.price = Float.parseFloat(params[TOUR_PRICE]);
-            this.recreationalActivity = RecreationalActivity.valueOf(params[RECREATIONAL_ACTIVITY]);
+            this.recreationalActivity = RecreationalActivity.valueOf(params[RECREATIONAL_ACTIVITY].toUpperCase());
             this.description = params[TOUR_DESCRIPTION];
-            this.transportation = Transportation.valueOf(params[TOUR_TRANSPORTATION]);
-            this.food = Food.valueOf(params[TOUR_FOOD]);
+            this.transportation = Transportation.valueOf(params[TOUR_TRANSPORTATION].toUpperCase());
+            this.food = Food.valueOf(params[TOUR_FOOD].toUpperCase());
         } catch (ArrayIndexOutOfBoundsException | DateTimeParseException | IllegalArgumentException e) {
             logger.error(e);
         }
@@ -72,7 +72,7 @@ public class RecreationalTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
-        return new RecreationalTour(this.tourId, this.tourName, this.destination, this.recreationalActivity,
+        return new RecreationalTour(this.tourId, this.tourName, this.destination, this.recreationalActivity, this.description,
                 this.transportation, this.food, this.startDate, this.endDate, this.price);
     }
 }

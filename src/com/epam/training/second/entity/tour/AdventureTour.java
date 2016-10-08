@@ -9,13 +9,14 @@ import java.util.UUID;
 public class AdventureTour extends Tour {
     private AdventureActivity adventureActivity;
 
-    public AdventureTour(UUID tourId, String tourName, Destination destination,
-                         AdventureActivity adventureActivity, Transportation transportation, Food food,
+    public AdventureTour(UUID tourId, String tourName, Destination destination, AdventureActivity adventureActivity,
+                         String description, Transportation transportation, Food food,
                          LocalDate startDate, LocalDate endDate, double price) {
         this.tourId = tourId;
         this.tourName = tourName;
         this.destination = destination;
         this.adventureActivity = adventureActivity;
+        this.description = description;
         this.transportation = transportation;
         this.food = food;
         this.startDate = startDate;
@@ -38,7 +39,7 @@ public class AdventureTour extends Tour {
                 ", startDate = " + startDate +
                 ", endDate = " + endDate +
                 ", duration = " + duration.getDays() + " days" +
-                ", price = " + price +
+                ", price = " + price + " $" +
                 '}';
     }
 }
