@@ -1,3 +1,7 @@
 festival, Coldplay, Poland, 2016-06-18, 2016-06-20, 100, rock, best concert in your life, train
-Adventure, UltraExtreme, Germany, 2016-10-10, 2016-10-20, 300
+Adventure, Ultra Extreme, Germany, 2016-10-10, 2016-10-20, 300
 else
+recreational, Lazy week, Turkey, 2016-12-01, 2016-12-07, 500, seaside_rest, being a couch potato is fun, plane, whole_day
+festival, Green Day, USA, 2017-04-17, 2017-04-21, 120, alternative, don't wanna be an american idiot, bus, none
+ADVENTURE, Carpathian Mountains, Ukraine, 2016-12-29, 2017-01-07, 250, hiking, New Year in the Carpathian Mountains, car, breakfast
+recreational, food & spa, France, 2017-05-01, 2017-05-20, 350, sightseeing, eat drink and enjoy France, plane, whole_day

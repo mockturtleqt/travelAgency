@@ -1,6 +1,9 @@
 package com.epam.training.second.controller;
 
+import com.epam.training.second.action.TourChooser;
+import com.epam.training.second.builder.ClientBuilder;
 import com.epam.training.second.entity.Agency;
+import com.epam.training.second.entity.Client;
 import com.epam.training.second.exception.WrongTourException;
 import com.epam.training.second.factory.TourFactory;
 import com.epam.training.second.reader.ReadToursFromFile;
@@ -20,8 +23,9 @@ public class Main {
                 logger.error(e, e);
             }
         });
-        lavandaLand.getTours().forEach(System.out::println);
-
+        //lavandaLand.getTours().forEach(System.out::println);
+        Client galia = new ClientBuilder("Galia", "Semashko", 1234).build();
+        TourChooser.chooseToursByGoal("festival", lavandaLand.getTours()).forEach(System.out::println);
 
     }
 }

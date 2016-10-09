@@ -29,7 +29,7 @@ public class RecreationalTour extends Tour {
     @Override
     public String toString() {
         return "Tour {" +
-                "tour name = '" + tourName + '\'' +
+                "name = '" + tourName + '\'' +
                 ", description = '" + description + '\'' +
                 ", destination = " + destination +
                 ", recreational activity = " + recreationalActivity +

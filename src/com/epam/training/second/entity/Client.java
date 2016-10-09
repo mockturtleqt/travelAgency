@@ -1,6 +1,5 @@
 package com.epam.training.second.entity;
 
-import com.epam.training.second.builder.ClientBuilder;
 import com.epam.training.second.entity.tour.Tour;
 
 import java.util.ArrayList;
@@ -12,10 +11,10 @@ public class Client {
     private String firstName;
     private String lastName;
     private String address;
-    private int cardNumber;
+    private long cardNumber;
     private List<Booking> bookings = new ArrayList<>();
 
-    public Client(UUID clientId, String firstName, String lastName, String address, int cardNumber) {
+    public Client(UUID clientId, String firstName, String lastName, String address, long cardNumber) {
         this.clientId = clientId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,7 +36,7 @@ public class Client {
         return bookings;
     }
 
-    public int getCardNumber() {
+    public long getCardNumber() {
 
         return cardNumber;
     }

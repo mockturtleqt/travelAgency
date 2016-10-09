@@ -9,9 +9,9 @@ public class ClientBuilder {
     private String firstName;
     private String lastName;
     private String address;
-    private int cardNumber;
+    private long cardNumber;
 
-    public ClientBuilder(String firstName, String lastName, int cardNumber) {
+    public ClientBuilder(String firstName, String lastName, long cardNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cardNumber = cardNumber;
@@ -40,7 +40,7 @@ public class ClientBuilder {
         return address;
     }
 
-    public int getCardNumber() {
+    public long getCardNumber() {
         return cardNumber;
     }
 

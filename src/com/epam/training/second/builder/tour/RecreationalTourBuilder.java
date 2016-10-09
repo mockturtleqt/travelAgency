@@ -39,8 +39,9 @@ public class RecreationalTourBuilder extends TourBuilder {
             this.description = params[TOUR_DESCRIPTION];
             this.transportation = Transportation.valueOf(params[TOUR_TRANSPORTATION].toUpperCase());
             this.food = Food.valueOf(params[TOUR_FOOD].toUpperCase());
-        } catch (ArrayIndexOutOfBoundsException | DateTimeParseException | IllegalArgumentException e) {
+        } catch (DateTimeParseException | IllegalArgumentException e) {
             logger.error(e);
+        } catch (ArrayIndexOutOfBoundsException e) {
         }
     }
 
