@@ -1,5 +1,6 @@
 package com.epam.training.second.entity;
 
+import com.epam.training.second.action.TourChooser;
 import com.epam.training.second.entity.tour.Tour;
 
 import java.util.ArrayList;
@@ -22,9 +23,10 @@ public class Client {
         this.cardNumber = cardNumber;
     }
 
-    public boolean bookTour(Tour tour) {
+    public boolean bookTour(String tourName, List<Tour> tourList) {
+        Tour tour = TourChooser.chooseTourByName(tourName, tourList);
         Booking booking = new Booking(this, tour);
-        bookings.add(booking);
+        this.bookings.add(booking);
         return true;
     }
 
@@ -54,5 +56,13 @@ public class Client {
     public String getFirstName() {
 
         return firstName;
+    }
+
+    @Override
+    public String toString() {
+        return "Client { " +
+                "firstName = '" + firstName + '\'' +
+                ", lastName = '" + lastName + '\'' +
+                '}';
     }
 }

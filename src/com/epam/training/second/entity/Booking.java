@@ -11,33 +11,6 @@ public class Booking {
         this.tour = tour;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Booking booking = (Booking) o;
-
-        if (!client.equals(booking.client)) return false;
-        return tour.equals(booking.tour);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = client.hashCode();
-        result = 31 * result + tour.hashCode();
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Booking{" +
-                "client=" + client +
-                ", tour=" + tour +
-                '}';
-    }
-
     public Tour getTour() {
 
         return tour;
@@ -54,5 +27,11 @@ public class Booking {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking {" + client +
+                ", Tour { tour name = " + tour.getTourName() + '}';
     }
 }

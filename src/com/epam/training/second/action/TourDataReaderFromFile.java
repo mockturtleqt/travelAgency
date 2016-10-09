@@ -1,4 +1,4 @@
-package com.epam.training.second.reader;
+package com.epam.training.second.action;
 
 import org.apache.log4j.Logger;
 
@@ -11,14 +11,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ReadToursFromFile {
-    private static Logger logger = Logger.getLogger(ReadToursFromFile.class);
+public class TourDataReaderFromFile {
+    private static Logger logger = Logger.getLogger(TourDataReaderFromFile.class);
 
-    public static List<String[]> readToursFromFile(String filepath) {
-        List<String[]> tourList = new ArrayList<>();
+    public static List<String[]> readTourDataFromFile(String filepath) {
+        List<String[]> tourDataList = new ArrayList<>();
 
         try (Stream<String> stream = Files.lines(Paths.get(filepath))) {
-            tourList = stream
+            tourDataList = stream
                     .map(String::toLowerCase)
                     .filter(line -> line.startsWith("festival") || line.startsWith("adventure") || line.startsWith("recreational"))
                     .map(line -> line.split(", "))
@@ -30,6 +30,7 @@ public class ReadToursFromFile {
         } catch (IOException e) {
             logger.error(e, e);
         }
-        return tourList;
+        return tourDataList;
     }
+
 }

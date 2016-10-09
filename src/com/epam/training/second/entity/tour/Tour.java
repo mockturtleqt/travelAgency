@@ -7,6 +7,7 @@ import com.epam.training.second.entity.Transportation;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Comparator;
 import java.util.UUID;
 
 public abstract class Tour {
@@ -64,5 +65,11 @@ public abstract class Tour {
 
     public double getPrice() {
         return price;
+    }
+
+    public static class TourComparator implements Comparator<Tour> {
+        public int compare(Tour t1, Tour t2) {
+            return (int) (t1.getPrice() - t2.getPrice());
+        }
     }
 }
