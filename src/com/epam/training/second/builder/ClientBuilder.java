@@ -15,7 +15,6 @@ public class ClientBuilder {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cardNumber = cardNumber;
-        this.clientId = UUID.randomUUID();
     }
 
     public ClientBuilder address(String address) {
@@ -24,7 +23,9 @@ public class ClientBuilder {
     }
 
     public Client build() {
-        return new Client(this);
+        this.clientId = UUID.randomUUID();
+
+        return new Client(this.clientId, this.firstName, this.lastName, this.address, this.cardNumber);
     }
 
     public String getFirstName() {

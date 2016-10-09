@@ -15,12 +15,12 @@ public class Client {
     private int cardNumber;
     private List<Booking> bookings = new ArrayList<>();
 
-    public Client(ClientBuilder clientBuilder) {
-        this.clientId = clientBuilder.getClientId();
-        this.firstName = clientBuilder.getFirstName();
-        this.lastName = clientBuilder.getLastName();
-        this.address = clientBuilder.getAddress();
-        this.cardNumber = clientBuilder.getCardNumber();
+    public Client(UUID clientId, String firstName, String lastName, String address, int cardNumber) {
+        this.clientId = clientId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.cardNumber = cardNumber;
     }
 
     public boolean bookTour(Tour tour) {
