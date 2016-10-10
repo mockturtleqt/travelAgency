@@ -32,6 +32,6 @@ public class Booking {
     @Override
     public String toString() {
         return "Booking {" + client +
-                ", Tour { tour name = " + tour.getTourName() + '}';
+                ", Tour {" + tour + '}';
     }
 }

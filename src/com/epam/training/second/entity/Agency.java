@@ -1,5 +1,6 @@
 package com.epam.training.second.entity;
 
+import com.epam.training.second.action.TourFinder;
 import com.epam.training.second.entity.tour.Tour;
 
 import java.util.ArrayList;
@@ -22,6 +23,10 @@ public class Agency {
     public List<Tour> getTours() {
 
         return tours;
+    }
+
+    public List<Tour> getToursByGoal(Goal goal) {
+        return TourFinder.findTour(this, goal);
     }
 
     public String getAgencyName() {

@@ -14,15 +14,7 @@ import java.time.format.DateTimeParseException;
 import java.util.UUID;
 
 public class FestivalTourBuilder extends TourBuilder {
-    private final int TOUR_NAME = 1;
-    private final int TOUR_DESTINATION = 2;
-    private final int TOUR_START_DATE = 3;
-    private final int TOUR_END_DATE = 4;
-    private final int TOUR_PRICE = 5;
     private final int MUSIC_GENRE = 6;
-    private final int TOUR_DESCRIPTION = 7;
-    private final int TOUR_TRANSPORTATION = 8;
-    private final int TOUR_FOOD = 9;
 
     private static Logger logger = Logger.getLogger(AdventureTourBuilder.class);
 
@@ -30,18 +22,17 @@ public class FestivalTourBuilder extends TourBuilder {
 
     public FestivalTourBuilder(String[] params) {
         try {
-            this.tourName = params[TOUR_NAME];
-            this.destination = Destination.valueOf(params[TOUR_DESTINATION].toUpperCase());
-            this.startDate = LocalDate.parse(params[TOUR_START_DATE]);
-            this.endDate = LocalDate.parse(params[TOUR_END_DATE]);
-            this.price = Float.parseFloat(params[TOUR_PRICE]);
+            this.tourName = params[ConstantHolder.TOUR_NAME];
+            this.destination = Destination.valueOf(params[ConstantHolder.TOUR_DESTINATION].toUpperCase());
+            this.startDate = LocalDate.parse(params[ConstantHolder.TOUR_START_DATE]);
+            this.endDate = LocalDate.parse(params[ConstantHolder.TOUR_END_DATE]);
+            this.price = Float.parseFloat(params[ConstantHolder.TOUR_PRICE]);
             this.musicGenre = MusicGenre.valueOf(params[MUSIC_GENRE].toUpperCase());
-            this.description = params[TOUR_DESCRIPTION];
-            this.transportation = Transportation.valueOf(params[TOUR_TRANSPORTATION].toUpperCase());
-            this.food = Food.valueOf(params[TOUR_FOOD].toUpperCase());
-        } catch (DateTimeParseException | IllegalArgumentException e) {
+            this.description = params[ConstantHolder.TOUR_DESCRIPTION];
+            this.transportation = Transportation.valueOf(params[ConstantHolder.TOUR_TRANSPORTATION].toUpperCase());
+            this.food = Food.valueOf(params[ConstantHolder.TOUR_FOOD].toUpperCase());
+        } catch (DateTimeParseException | IllegalArgumentException | ArrayIndexOutOfBoundsException e) {
             logger.error(e);
-        } catch (ArrayIndexOutOfBoundsException e) {
         }
     }
 

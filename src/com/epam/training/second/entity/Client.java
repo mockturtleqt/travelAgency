@@ -1,13 +1,15 @@
 package com.epam.training.second.entity;
 
-import com.epam.training.second.action.TourChooser;
-import com.epam.training.second.entity.tour.Tour;
+import com.epam.training.second.action.TourBooker;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class Client {
+    Logger logger = Logger.getLogger(Client.class);
+
     private UUID clientId;
     private String firstName;
     private String lastName;
@@ -23,11 +25,8 @@ public class Client {
         this.cardNumber = cardNumber;
     }
 
-    public boolean bookTour(String tourName, List<Tour> tourList) {
-        Tour tour = TourChooser.chooseTourByName(tourName, tourList);
-        Booking booking = new Booking(this, tour);
-        this.bookings.add(booking);
-        return true;
+    public void bookTour(String tourName, Agency agency) {
+        TourBooker.bookTour(agency, this, tourName);
     }
 
     public UUID getClientId() {
