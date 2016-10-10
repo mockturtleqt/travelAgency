@@ -1,5 +1,3 @@
-package action;
-
 import com.epam.training.second.action.TourDataReaderFromFile;
 import org.junit.Test;
 

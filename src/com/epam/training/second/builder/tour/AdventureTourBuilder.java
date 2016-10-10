@@ -2,14 +2,12 @@ package com.epam.training.second.builder.tour;
 
 import com.epam.training.second.entity.tour.AdventureTour;
 import com.epam.training.second.entity.tour.Tour;
-import com.epam.training.second.entity.type.AdventureActivity;
-import com.epam.training.second.entity.type.Destination;
-import com.epam.training.second.entity.type.Food;
-import com.epam.training.second.entity.type.Transportation;
+import com.epam.training.second.entity.type.*;
 import com.epam.training.second.exception.WrongTourException;
 import org.apache.log4j.Logger;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeParseException;
 import java.util.UUID;
 
@@ -64,7 +62,10 @@ public class AdventureTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
+        this.duration = Period.between(endDate, startDate);
+
         AdventureTour adventureTour = new AdventureTour();
+        adventureTour.setGoal(Goal.ADVENTURE);
         adventureTour.setTourId(this.tourId);
         adventureTour.setTourName(this.tourName);
         adventureTour.setDestination(this.destination);
@@ -74,6 +75,7 @@ public class AdventureTourBuilder extends TourBuilder {
         adventureTour.setFood(this.food);
         adventureTour.setStartDate(this.startDate);
         adventureTour.setEndDate(this.endDate);
+        adventureTour.setDuration(this.duration);
         adventureTour.setPrice(this.price);
 
         return adventureTour;

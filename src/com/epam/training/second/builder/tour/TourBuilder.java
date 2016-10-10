@@ -8,6 +8,7 @@ import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.exception.WrongTourException;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.UUID;
 
 public abstract class TourBuilder {
@@ -22,6 +23,7 @@ public abstract class TourBuilder {
     protected Food food;
     protected LocalDate startDate = LocalDate.parse(DEFAULT_DATE);
     protected LocalDate endDate = LocalDate.parse(DEFAULT_DATE);
+    protected Period duration;
     protected float price;
 
     public abstract Tour build() throws WrongTourException;
@@ -64,6 +66,14 @@ public abstract class TourBuilder {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public Period getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Period duration) {
+        this.duration = duration;
     }
 
     public UUID getTourId() {

@@ -1,5 +1,3 @@
-package action;
-
 import com.epam.training.second.action.TourCreatorFromFile;
 import com.epam.training.second.factory.TourFactory;
 import org.junit.Test;

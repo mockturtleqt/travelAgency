@@ -1,5 +1,3 @@
-package action;
-
 import com.epam.training.second.action.TourCreatorFromFile;
 import com.epam.training.second.action.TourFinder;
 import com.epam.training.second.entity.Agency;

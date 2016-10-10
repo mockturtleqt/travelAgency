@@ -2,14 +2,12 @@ package com.epam.training.second.builder.tour;
 
 import com.epam.training.second.entity.tour.FestivalTour;
 import com.epam.training.second.entity.tour.Tour;
-import com.epam.training.second.entity.type.Destination;
-import com.epam.training.second.entity.type.Food;
-import com.epam.training.second.entity.type.MusicGenre;
-import com.epam.training.second.entity.type.Transportation;
+import com.epam.training.second.entity.type.*;
 import com.epam.training.second.exception.WrongTourException;
 import org.apache.log4j.Logger;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeParseException;
 import java.util.UUID;
 
@@ -64,7 +62,10 @@ public class FestivalTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
+        this.duration = Period.between(endDate, startDate);
+
         FestivalTour festivalTour = new FestivalTour();
+        festivalTour.setGoal(Goal.FESTIVAL);
         festivalTour.setTourId(this.tourId);
         festivalTour.setTourName(this.tourName);
         festivalTour.setDestination(this.destination);
@@ -74,6 +75,7 @@ public class FestivalTourBuilder extends TourBuilder {
         festivalTour.setFood(this.food);
         festivalTour.setStartDate(this.startDate);
         festivalTour.setEndDate(this.endDate);
+        festivalTour.setDuration(this.duration);
         festivalTour.setPrice(this.price);
 
         return festivalTour;

@@ -6,8 +6,10 @@ import com.epam.training.second.action.TourFinder;
 import com.epam.training.second.builder.ClientBuilder;
 import com.epam.training.second.entity.Agency;
 import com.epam.training.second.entity.Client;
+import com.epam.training.second.entity.type.Destination;
 import com.epam.training.second.entity.type.Goal;
 import com.epam.training.second.entity.tour.Tour;
+import com.epam.training.second.exception.WrongTourException;
 import com.epam.training.second.factory.TourFactory;
 import org.apache.log4j.Logger;
 
@@ -24,9 +26,11 @@ public class Main {
 
         Client galia = new ClientBuilder("Galia", "Semashko", 1234).build();
 
-        List<Tour> acceptibleTours = TourFinder.findTour(lavandaLand, Goal.FESTIVAL);
-        Collections.sort(acceptibleTours, new Tour.TourComparator());
-        acceptibleTours.forEach(logger::info);
+        List<Tour> acceptableTours = TourFinder.findTour(lavandaLand, Goal.FESTIVAL);
+        List<Tour> t = TourFinder.findTour(lavandaLand, "2018-01-01", Destination.POLAND);
+
+        Collections.sort(acceptableTours, new Tour.TourComparator());
+        acceptableTours.forEach(logger::info);
 
         TourBooker.bookTour(lavandaLand, galia, "coldplay");
         logger.info(galia.getBookings());

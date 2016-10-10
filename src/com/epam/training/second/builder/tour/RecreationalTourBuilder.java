@@ -1,15 +1,13 @@
 package com.epam.training.second.builder.tour;
 
-import com.epam.training.second.entity.type.Destination;
-import com.epam.training.second.entity.type.Food;
-import com.epam.training.second.entity.type.RecreationalActivity;
-import com.epam.training.second.entity.type.Transportation;
+import com.epam.training.second.entity.type.*;
 import com.epam.training.second.entity.tour.RecreationalTour;
 import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.exception.WrongTourException;
 import org.apache.log4j.Logger;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeParseException;
 import java.util.UUID;
 
@@ -64,7 +62,10 @@ public class RecreationalTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
+        this.duration = Period.between(endDate, startDate);
+
         RecreationalTour recreationalTour = new RecreationalTour();
+        recreationalTour.setGoal(Goal.RECREATION);
         recreationalTour.setTourId(this.tourId);
         recreationalTour.setTourName(this.tourName);
         recreationalTour.setDestination(this.destination);
@@ -74,6 +75,7 @@ public class RecreationalTourBuilder extends TourBuilder {
         recreationalTour.setFood(this.food);
         recreationalTour.setStartDate(this.startDate);
         recreationalTour.setEndDate(this.endDate);
+        recreationalTour.setDuration(this.duration);
         recreationalTour.setPrice(this.price);
 
         return recreationalTour;
