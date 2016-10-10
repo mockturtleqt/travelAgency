@@ -29,18 +29,23 @@ public class TourFinderTest {
     }
 
     @Test
-    public void findByGoal() throws WrongTourException {
+    public void findByGoal() {
         assertEquals(TourFinder.findTour(lavandaLand, Goal.FESTIVAL).get(0).getGoal(), Goal.FESTIVAL);
     }
 
     @Test
-    public void findByDateAndDestination() throws WrongTourException {
+    public void findByDateAndDestination() {
         assertEquals(TourFinder.findTour(lavandaLand, "2016-01-01", Destination.POLAND).get(0).getDestination(), Destination.POLAND);
     }
 
     @Test
-    public void findByDurationFoodAndTransportation() throws WrongTourException {
+    public void findByDurationFoodAndTransportation() {
         assertEquals(TourFinder.findTour(lavandaLand, 19, Food.WHOLE_DAY, Transportation.PLANE).get(0).getTourName(), "food & spa");
+    }
+
+    @Test(expected = WrongTourException.class)
+    public void wrongTourTest() throws WrongTourException{
+        TourFinder.findTour(lavandaLand, "wrong tour");
     }
 
 }

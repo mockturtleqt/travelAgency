@@ -30,7 +30,7 @@ public class TourFinder {
                 .collect(Collectors.toList());
     }
 
-    public static List<Tour> findTour(Agency agency, String startDate, Destination destination) throws WrongTourException {
+    public static List<Tour> findTour(Agency agency, String startDate, Destination destination) {
         Predicate<Tour> condition = tour -> tour.getStartDate().isAfter(LocalDate.parse(startDate)) &&
                 tour.getDestination().equals(destination);
 
@@ -40,7 +40,7 @@ public class TourFinder {
                 .collect(Collectors.toList());
     }
 
-    public static List<Tour> findTour(Agency agency, int numberOfDays, Food food, Transportation transportation) throws WrongTourException {
+    public static List<Tour> findTour(Agency agency, int numberOfDays, Food food, Transportation transportation) {
         Predicate<Tour> condition = tour -> tour.getDuration().equals(Period.ofDays(numberOfDays)) &&
                 tour.getFood().equals(food) &&
                 tour.getTransportation().equals(transportation);
