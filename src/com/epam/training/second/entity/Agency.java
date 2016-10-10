@@ -2,6 +2,7 @@ package com.epam.training.second.entity;
 
 import com.epam.training.second.action.TourFinder;
 import com.epam.training.second.entity.tour.Tour;
+import com.epam.training.second.entity.type.Goal;
 
 import java.util.ArrayList;
 import java.util.List;

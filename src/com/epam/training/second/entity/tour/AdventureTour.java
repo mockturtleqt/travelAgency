@@ -1,6 +1,11 @@
 package com.epam.training.second.entity.tour;
 
-import com.epam.training.second.entity.*;
+
+import com.epam.training.second.entity.type.AdventureActivity;
+import com.epam.training.second.entity.type.Destination;
+import com.epam.training.second.entity.type.Transportation;
+import com.epam.training.second.entity.type.Food;
+import com.epam.training.second.entity.type.Goal;
 
 import java.time.LocalDate;
 import java.time.Period;

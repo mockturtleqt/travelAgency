@@ -1,9 +1,9 @@
 package com.epam.training.second.builder.tour;
 
-import com.epam.training.second.entity.AdventureActivity;
-import com.epam.training.second.entity.Destination;
-import com.epam.training.second.entity.Food;
-import com.epam.training.second.entity.Transportation;
+import com.epam.training.second.entity.type.AdventureActivity;
+import com.epam.training.second.entity.type.Destination;
+import com.epam.training.second.entity.type.Food;
+import com.epam.training.second.entity.type.Transportation;
 import com.epam.training.second.entity.tour.AdventureTour;
 import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.exception.WrongTourException;

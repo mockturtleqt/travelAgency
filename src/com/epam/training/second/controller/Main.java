@@ -5,7 +5,7 @@ import com.epam.training.second.action.TourFinder;
 import com.epam.training.second.builder.ClientBuilder;
 import com.epam.training.second.entity.Agency;
 import com.epam.training.second.entity.Client;
-import com.epam.training.second.entity.Goal;
+import com.epam.training.second.entity.type.Goal;
 import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.factory.TourFactory;
 

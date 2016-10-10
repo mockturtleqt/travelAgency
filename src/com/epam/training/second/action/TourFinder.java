@@ -1,7 +1,11 @@
 package com.epam.training.second.action;
 
-import com.epam.training.second.entity.*;
+import com.epam.training.second.entity.Agency;
 import com.epam.training.second.entity.tour.Tour;
+import com.epam.training.second.entity.type.Destination;
+import com.epam.training.second.entity.type.Food;
+import com.epam.training.second.entity.type.Goal;
+import com.epam.training.second.entity.type.Transportation;
 import com.epam.training.second.exception.WrongTourException;
 
 import java.time.LocalDate;
