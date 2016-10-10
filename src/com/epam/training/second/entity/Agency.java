@@ -26,10 +26,6 @@ public class Agency {
         return tours;
     }
 
-    public List<Tour> getToursByGoal(Goal goal) {
-        return TourFinder.findTour(this, goal);
-    }
-
     public String getAgencyName() {
 
         return agencyName;

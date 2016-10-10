@@ -1,6 +1,5 @@
 package com.epam.training.second.entity;
 
-import com.epam.training.second.action.TourBooker;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -23,10 +22,6 @@ public class Client {
         this.lastName = lastName;
         this.address = address;
         this.cardNumber = cardNumber;
-    }
-
-    public void bookTour(String tourName, Agency agency) {
-        TourBooker.bookTour(agency, this, tourName);
     }
 
     public UUID getClientId() {
