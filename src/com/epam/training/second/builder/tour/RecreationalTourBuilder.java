@@ -64,7 +64,18 @@ public class RecreationalTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
-        return new RecreationalTour(this.tourId, this.tourName, this.destination, this.recreationalActivity, this.description,
-                this.transportation, this.food, this.startDate, this.endDate, this.price);
+        RecreationalTour recreationalTour = new RecreationalTour();
+        recreationalTour.setTourId(this.tourId);
+        recreationalTour.setTourName(this.tourName);
+        recreationalTour.setDestination(this.destination);
+        recreationalTour.setRecreationalActivity(this.recreationalActivity);
+        recreationalTour.setDescription(this.description);
+        recreationalTour.setTransportation(this.transportation);
+        recreationalTour.setFood(this.food);
+        recreationalTour.setStartDate(this.startDate);
+        recreationalTour.setEndDate(this.endDate);
+        recreationalTour.setPrice(this.price);
+
+        return recreationalTour;
     }
 }

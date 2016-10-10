@@ -1,33 +1,19 @@
 package com.epam.training.second.entity.tour;
 
 import com.epam.training.second.entity.type.MusicGenre;
-import com.epam.training.second.entity.type.Destination;
-import com.epam.training.second.entity.type.Transportation;
-import com.epam.training.second.entity.type.Food;
-import com.epam.training.second.entity.type.Goal;
-
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.UUID;
 
 public class FestivalTour extends Tour {
     private MusicGenre musicGenre;
 
-    public FestivalTour(UUID tourId, String tourName, Destination destination, MusicGenre musicGenre,
-                        String description, Transportation transportation, Food food,
-                        LocalDate startDate, LocalDate endDate, double price) {
-        this.tourId = tourId;
-        this.tourName = tourName;
-        this.destination = destination;
+    public FestivalTour() {
+    }
+
+    public MusicGenre getMusicGenre() {
+        return musicGenre;
+    }
+
+    public void setMusicGenre(MusicGenre musicGenre) {
         this.musicGenre = musicGenre;
-        this.description = description;
-        this.transportation = transportation;
-        this.food = food;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.duration = Period.between(startDate, endDate);
-        this.price = price;
-        this.goal = Goal.FESTIVAL;
     }
 
     @Override

@@ -1,11 +1,11 @@
 package com.epam.training.second.builder.tour;
 
+import com.epam.training.second.entity.tour.AdventureTour;
+import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.entity.type.AdventureActivity;
 import com.epam.training.second.entity.type.Destination;
 import com.epam.training.second.entity.type.Food;
 import com.epam.training.second.entity.type.Transportation;
-import com.epam.training.second.entity.tour.AdventureTour;
-import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.exception.WrongTourException;
 import org.apache.log4j.Logger;
 
@@ -64,7 +64,18 @@ public class AdventureTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
-        return new AdventureTour(this.tourId, this.tourName, this.destination, this.adventureActivity, this.description,
-                this.transportation, this.food, this.startDate, this.endDate, this.price);
+        AdventureTour adventureTour = new AdventureTour();
+        adventureTour.setTourId(this.tourId);
+        adventureTour.setTourName(this.tourName);
+        adventureTour.setDestination(this.destination);
+        adventureTour.setAdventureActivity(this.adventureActivity);
+        adventureTour.setDescription(this.description);
+        adventureTour.setTransportation(this.transportation);
+        adventureTour.setFood(this.food);
+        adventureTour.setStartDate(this.startDate);
+        adventureTour.setEndDate(this.endDate);
+        adventureTour.setPrice(this.price);
+
+        return adventureTour;
     }
 }

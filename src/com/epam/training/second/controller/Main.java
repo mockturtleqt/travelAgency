@@ -15,9 +15,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class Main {
+    private static Logger logger = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
-        Logger logger = Logger.getLogger(Main.class);
         TourFactory lavanda = new TourFactory();
         Agency lavandaLand = new Agency("Lavanda Land");
         lavandaLand.getTours().addAll(TourCreatorFromFile.createToursFromFile("./data/tours.txt", lavanda));

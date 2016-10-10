@@ -6,6 +6,8 @@ public class Booking {
     private Client client;
     private Tour tour;
 
+    public Booking() {}
+
     public Booking(Client client, Tour tour) {
         this.client = client;
         this.tour = tour;

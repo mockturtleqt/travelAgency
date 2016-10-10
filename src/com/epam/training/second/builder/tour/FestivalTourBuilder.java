@@ -1,11 +1,11 @@
 package com.epam.training.second.builder.tour;
 
+import com.epam.training.second.entity.tour.FestivalTour;
+import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.entity.type.Destination;
 import com.epam.training.second.entity.type.Food;
 import com.epam.training.second.entity.type.MusicGenre;
 import com.epam.training.second.entity.type.Transportation;
-import com.epam.training.second.entity.tour.FestivalTour;
-import com.epam.training.second.entity.tour.Tour;
 import com.epam.training.second.exception.WrongTourException;
 import org.apache.log4j.Logger;
 
@@ -64,7 +64,18 @@ public class FestivalTourBuilder extends TourBuilder {
             this.food = Food.NONE;
         }
 
-        return new FestivalTour(this.tourId, this.tourName, this.destination, this.musicGenre, this.description,
-                this.transportation, this.food, this.startDate, this.endDate, this.price);
+        FestivalTour festivalTour = new FestivalTour();
+        festivalTour.setTourId(this.tourId);
+        festivalTour.setTourName(this.tourName);
+        festivalTour.setDestination(this.destination);
+        festivalTour.setMusicGenre(this.musicGenre);
+        festivalTour.setDescription(this.description);
+        festivalTour.setTransportation(this.transportation);
+        festivalTour.setFood(this.food);
+        festivalTour.setStartDate(this.startDate);
+        festivalTour.setEndDate(this.endDate);
+        festivalTour.setPrice(this.price);
+
+        return festivalTour;
     }
 }

@@ -1,33 +1,19 @@
 package com.epam.training.second.entity.tour;
 
-import com.epam.training.second.entity.type.Destination;
-import com.epam.training.second.entity.type.Transportation;
-import com.epam.training.second.entity.type.Food;
-import com.epam.training.second.entity.type.Goal;
 import com.epam.training.second.entity.type.RecreationalActivity;
-
-import java.time.LocalDate;
-import java.time.Period;
-import java.util.UUID;
 
 public class RecreationalTour extends Tour {
     private RecreationalActivity recreationalActivity;
 
-    public RecreationalTour(UUID tourId, String tourName, Destination destination, RecreationalActivity recreationalActivity,
-                            String description, Transportation transportation, Food food,
-                            LocalDate startDate, LocalDate endDate, double price) {
-        this.tourId = tourId;
-        this.tourName = tourName;
-        this.destination = destination;
+    public RecreationalTour() {
+    }
+
+    public RecreationalActivity getRecreationalActivity() {
+        return recreationalActivity;
+    }
+
+    public void setRecreationalActivity(RecreationalActivity recreationalActivity) {
         this.recreationalActivity = recreationalActivity;
-        this.description = description;
-        this.transportation = transportation;
-        this.food = food;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.duration = Period.between(startDate, endDate);
-        this.price = price;
-        this.goal = Goal.RECREATION;
     }
 
     @Override

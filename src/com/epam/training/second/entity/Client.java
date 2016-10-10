@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class Client {
-    Logger logger = Logger.getLogger(Client.class);
+    private static Logger logger = Logger.getLogger(Client.class);
 
     private UUID clientId;
     private String firstName;
@@ -15,6 +15,8 @@ public class Client {
     private String address;
     private long cardNumber;
     private List<Booking> bookings = new ArrayList<>();
+
+    public Client() {}
 
     public Client(UUID clientId, String firstName, String lastName, String address, long cardNumber) {
         this.clientId = clientId;

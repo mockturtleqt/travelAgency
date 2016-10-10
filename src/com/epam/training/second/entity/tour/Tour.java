@@ -31,6 +31,50 @@ public abstract class Tour {
         return tourId;
     }
 
+    public void setTourId(UUID tourId) {
+        this.tourId = tourId;
+    }
+
+    public void setTourName(String tourName) {
+        this.tourName = tourName;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDestination(Destination destination) {
+        this.destination = destination;
+    }
+
+    public void setGoal(Goal goal) {
+        this.goal = goal;
+    }
+
+    public void setTransportation(Transportation transportation) {
+        this.transportation = transportation;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setDuration(Period duration) {
+        this.duration = duration;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public Destination getDestination() {
         return destination;
     }

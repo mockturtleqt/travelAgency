@@ -8,9 +8,9 @@ import com.epam.training.second.exception.WrongTourException;
 import org.apache.log4j.Logger;
 
 public class TourBooker {
+    private static Logger logger = Logger.getLogger(TourBooker.class);
 
     public static void bookTour(Agency agency, Client client, String tourName) {
-        Logger logger = Logger.getLogger(TourBooker.class);
         try {
             Tour tour = TourFinder.findTour(agency, tourName);
             Booking booking = new Booking(client, tour);
