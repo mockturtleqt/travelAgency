@@ -14,7 +14,7 @@ import java.util.UUID;
 public class RecreationalTourBuilder extends TourBuilder {
     private final int RECREATIONAL_ACTIVITY = 6;
 
-    private static Logger logger = Logger.getLogger(AdventureTourBuilder.class);
+    private static Logger logger = Logger.getLogger(RecreationalTourBuilder.class);
 
     private RecreationalActivity recreationalActivity = RecreationalActivity.SEASIDE_REST;
 

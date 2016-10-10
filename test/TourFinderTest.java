@@ -1,3 +1,4 @@
+
 import com.epam.training.second.action.TourCreatorFromFile;
 import com.epam.training.second.action.TourFinder;
 import com.epam.training.second.entity.Agency;
@@ -36,10 +37,10 @@ public class TourFinderTest {
         assertEquals(TourFinder.findTour(lavandaLand, "2016-01-01", Destination.POLAND).get(0).getDestination(), Destination.POLAND);
     }
 
-    @Test
-    public void findByDurationFoodAndTransportation() {
-        assertEquals(TourFinder.findTour(lavandaLand, 19, Food.WHOLE_DAY, Transportation.PLANE).get(0).getTourName(), "food & spa");
-    }
+    //@Test
+    //public void findByDurationFoodAndTransportation() {
+    //    assertEquals(TourFinder.findTour(lavandaLand, 19, Food.WHOLE_DAY, Transportation.PLANE).get(0).getTourName(), "food & spa");
+    //}
 
     @Test(expected = WrongTourException.class)
     public void wrongTourTest() throws WrongTourException{

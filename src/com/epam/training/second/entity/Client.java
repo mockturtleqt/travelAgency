@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.UUID;
 
 public class Client {
-    private static Logger logger = Logger.getLogger(Client.class);
 
     private UUID clientId;
     private String firstName;

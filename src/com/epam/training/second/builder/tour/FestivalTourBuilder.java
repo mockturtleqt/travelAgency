@@ -14,7 +14,7 @@ import java.util.UUID;
 public class FestivalTourBuilder extends TourBuilder {
     private final int MUSIC_GENRE = 6;
 
-    private static Logger logger = Logger.getLogger(AdventureTourBuilder.class);
+    private static Logger logger = Logger.getLogger(FestivalTourBuilder.class);
 
     private MusicGenre musicGenre = MusicGenre.ROCK;
 
