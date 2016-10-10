@@ -1,7 +1,5 @@
 package com.epam.training.second.entity;
 
-import org.apache.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -15,7 +13,8 @@ public class Client {
     private long cardNumber;
     private List<Booking> bookings = new ArrayList<>();
 
-    public Client() {}
+    public Client() {
+    }
 
     public Client(UUID clientId, String firstName, String lastName, String address, long cardNumber) {
         this.clientId = clientId;
